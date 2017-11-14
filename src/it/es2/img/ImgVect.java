@@ -4,7 +4,7 @@ package it.es2.img;
 import it.es2.forme.Colore;
 import it.es2.forme.Forme;
 
-public class ImgVect {
+public class ImgVect implements Comparable<ImgVect> {
     private int maxforme;
     private int cforme;
     private Forme[] forma;
@@ -39,7 +39,7 @@ public class ImgVect {
         int i;
         double areatot = 0;
         for(i = 0; i < cforme; i++){
-            areatot = areatot + forma[i].area();
+            areatot = areatot + forma[i].getArea();
         }
         return areatot;
     }
@@ -48,9 +48,18 @@ public class ImgVect {
         double areatot = 0;
         for(i = 0; i < cforme; i++){
             if(forma[i].getColore() == colore){
-                areatot = areatot + forma[i].area();
+                areatot = areatot + forma[i].getArea();
             }
         }
         return areatot;
+    }
+    @Override
+    public String toString(){
+        return "Vettore di area totale: "+areacomponenti();
+    }
+
+    @Override
+    public int compareTo(ImgVect im) {
+        return Double.compare(this.areacomponenti(), im.areacomponenti());
     }
 }

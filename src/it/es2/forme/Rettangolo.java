@@ -26,13 +26,17 @@ public class Rettangolo extends Forme{
     }
 
     @Override
-    public double area() {
+    public double getArea() {
         return lato1 *lato2;
     }
 
     @Override
-    public double perimetro() {
+    public double getPerimetro() {
         return (lato1 + lato2) * 2;
+    }
+    @Override
+    public int compareTo(Forme f) {
+        return Double.compare(this.getArea(), f.getArea());
     }
 
     @Override

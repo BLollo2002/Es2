@@ -19,16 +19,22 @@ public class Cerchio extends Forme {
     }
 
     @Override
-    public double area() {
+    public double getArea() {
         return raggio * raggio * Math.PI;
     }
 
     @Override
-    public double perimetro() {
+    public double getPerimetro() {
         return raggio * 2 * Math.PI;
     }
     @Override
     public String toString(){
         return "Cerchio di colore " +super.getColore() + " con raggio " + getRaggio();
     }
+
+
+    @Override
+    public int compareTo(Forme f) {
+        return Double.compare(this.getArea(), f.getArea());
+        }
 }

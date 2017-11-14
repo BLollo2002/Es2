@@ -18,13 +18,17 @@ public class Quadrato extends Forme {
     }
 
     @Override
-    public double area() {
+    public double getArea() {
         return lato * lato;
     }
 
     @Override
-    public double perimetro() {
+    public double getPerimetro() {
         return lato * 4;
+    }
+    @Override
+    public int compareTo(Forme f) {
+        return Double.compare(this.getArea(), f.getArea());
     }
     @Override
     public String toString(){

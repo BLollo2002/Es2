@@ -1,6 +1,6 @@
 package it.es2.forme;
 
-public abstract class Forme implements Comparable<Forme> {
+public abstract class Forme implements Misurabile{
      Colore colore;
 
     public Forme(Colore colore) {
@@ -10,13 +10,4 @@ public abstract class Forme implements Comparable<Forme> {
     public  Colore getColore() {
         return colore;
     }
-
-    public abstract double area();
-
-    public abstract double perimetro();
-
-    public int compareTo(Forme f){
-        return Double.compare(this.area(), f.area());
-    }
-
 }
